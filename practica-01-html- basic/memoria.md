@@ -16,10 +16,9 @@
  
   4. [texto de enlace]([./Imatges/FonsGrub640.tga](https://www.youtube.com/shorts/uQqKliKtEIc))
    
-     ![imagen](<img width="951" height="547" alt="Captura de 2026-09-22 10-56-30" src="https://github.com/user-attachments/assets/5067a59f-da14-47e8-ac74-7c9d6a4d4cb5" />)
+     ![imagen captura]()
 
-![imagen](./Imatges/Captura de 2026-09-22 10-56-30.png)
-
+![imagen](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7IFevOeApyNCDFJ9cgp5PMm1eO2rjC34_QPFG-9O5Qw&s=10)
 
 ```html
 <h1> hola mundo </h1>
