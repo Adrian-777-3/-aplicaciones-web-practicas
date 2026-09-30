@@ -6,7 +6,7 @@
 ## Comprueba la versión del sistema:
 - lsb_release -a
 
-![captura 1][apache/Captura de 2026-09-30 09-42-08.png]
+![captura 1][apache/fotos/Captura de 2026-09-30 09-42-08.png]
 
 # apartado 2
 
