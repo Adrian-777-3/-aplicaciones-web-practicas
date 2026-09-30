@@ -14,5 +14,7 @@
 -sudo apt install apache2 -y
 ## Comprueba la versión instalada:
 -apache2 -v
+
 ![captura 1](fotos/Captura%204.png)
+
 ### preguntas ¿Qué paquetes adicionales se han instalado como dependencias? (pista: revisa la salida de apt).
