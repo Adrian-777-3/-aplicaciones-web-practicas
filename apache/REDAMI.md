@@ -29,6 +29,6 @@ sudo systemctl status apache2
 sudo ss -tulpn | grep apache2
 
 en Apache2:
--Puerto 80: permite acceder a páginas web mediante HTTP.
--Puerto 443: permite acceder a páginas web mediante HTTPS de forma cifrada.
--Puerto 22: permite conectarse al servidor remotamente mediante SSH.
+- Puerto 80: permite acceder a páginas web mediante HTTP.
+- Puerto 443: permite acceder a páginas web mediante HTTPS de forma cifrada.
+- Puerto 22: permite conectarse al servidor remotamente mediante SSH.
