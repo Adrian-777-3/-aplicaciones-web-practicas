@@ -38,6 +38,8 @@ en Apache2:
 
 ### en Apache2 usaremos el comado curl -I http://localhost que Comprueba que Apache responde correctamente en el servidor local y muestra sus cabeceras HTTP
 
+![captura 1](fotos/Captura%205.png)
 
+![captura 1](fotos/Captura%206.png)
 
 
