@@ -11,15 +11,16 @@
 # APARTADO 2
 
 ### instalamos apache y comprobamos la version
--sudo apt install apache2 -y
+- sudo apt install apache2 -y
 ### Comprueba la versión instalada:
--apache2 -v
+- apache2 -v
 
 ![captura 1](fotos/Captura%204.png)
 
 preguntas ¿Qué paquetes adicionales se han instalado como dependencias? (pista: revisa la salida de apt).
 
 ![captura 1](fotos/Captura%203.png)
+todas las que pongan depended son opcionales 
 
 # APARTADO 3
 
