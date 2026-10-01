@@ -7,3 +7,4 @@ Repositorio con las memorias de las prácticas del módulo de Aplicaciones Web.
 | Nº | Práctica | Memoria|
 |----|----------------------------|------------------------------------------------------|
 | 1 | Introducción a HTML básico | [Vermemoria](https://github.com/Adrian-777-3/-aplicaciones-web-practicas/blob/main/practica-01-html-%20basic/memoria.md) |
+| 2 | PRACTICA apache | [Vermemoria](https://github.com/Adrian-777-3/-aplicaciones-web-practicas/tree/main/apache) |
