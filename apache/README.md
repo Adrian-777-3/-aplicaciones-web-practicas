@@ -26,6 +26,7 @@ todas las que pongan depended son opcionales
 # APARTADO 3
 
 ### comprobamos el estado del servidor 
+
 sudo systemctl status apache2
 ### Un puerto en escucha es como una “puerta” por la que un servicio espera que otros equipos se conecten
 sudo ss -tulpn | grep apache2
@@ -49,3 +50,10 @@ en Apache2:
 - sudo ufw allow 'Apache'
 
 pregunta ¿Qué diferencia hay entre los perfiles Apache, Apache Full y Apache Secure?
+
+- Apache: permite HTTP (puerto 80).
+- Apache Full: permite HTTP (80) y HTTPS (443).
+- Apache Secure: permite solo HTTPS (443).
+- puerto 433 conexion cifrada o segura y puerto 80 sin cifrado entrar a paginas web
+
+
