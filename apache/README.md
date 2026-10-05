@@ -45,7 +45,7 @@ en Apache2:
 
 ### comprobamos si firewall esta activado y permitimos con el segundo comando conectar apache con firewall
 
-- sudo ufw status
+- sudo ufw status (UFW está inactivo, por lo que actualmente no está bloqueando las conexiones de Apache.)
 - sudo ufw allow 'Apache'
 
 pregunta ¿Qué diferencia hay entre los perfiles Apache, Apache Full y Apache Secure?
