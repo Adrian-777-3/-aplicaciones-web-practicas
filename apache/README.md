@@ -96,5 +96,25 @@ Conviene usar reload cuando has cambiado la configuración de Apache y quieres q
 
 ![captura 1](fotos/Captura%207.png)
 
+# apartado 6
+
+### copia seguridad servidor
+
+![captura 1](fotos/Captura%208.png)
+
+### cambiaremos su pagina de inicio
+
+![captura 1](fotos/Captura%209.png)
+
+### 
+
+
+
+
+
+
+
+
+
 
 
