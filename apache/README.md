@@ -58,18 +58,21 @@ pregunta ¿Qué diferencia hay entre los perfiles Apache, Apache Full y Apache S
 
 # apartado 4
 
-|sudo systemctl start apache2 | Enciende Apache y hace que empiece a funcionar.|
---------------------------------------------------------------------------------
-|sudo systemctl stop apache2 | Apaga Apache y deja de funcionar.|
--
-|sudo systemctl restart apache2 | Apaga y vuelve a encender Apache. Puede cortar las conexiones que estén activas.|
-|sudo systemctl reload apache2 | Hace que Apache vuelva a leer su configuración, pero sin apagarlo ni cortar las conexiones.|
-|sudo systemctl enable apache2 | Hace que Apache se encienda automáticamente cuando arranque el ordenador.|
-|sudo systemctl disable apache2 | Hace que Apache no se encienda automáticamente al arrancar el ordenador.|
-|apache2ctl configtest | Comprueba si la configuración de Apache está bien escrita y si hay errores.|
-|apache2ctl -S | Muestra los sitios web que Apache tiene configurados.|
-|apache2ctl -M | Muestra los módulos de Apache que están activados.|
-|a2enmod / a2dismod | Activa o desactiva módulos de Apache. Los módulos son funciones adicionales que puede utilizar Apache.|
-|a2ensite / a2dissite | Activa o desactiva sitios web configurados en Apache.|
-a2enconf / a2disconf | Activa o desactiva configuraciones adicionales de Apache.|
+| Nº | Comando | Definición |
+|---:|---|---|
+| 1 | `sudo systemctl start apache2` | Enciende Apache y hace que empiece a funcionar el servidor. |
+| 2 | `sudo systemctl stop apache2` | Apaga Apache y deja de funcionar el servidor. |
+| 3 | `sudo systemctl restart apache2` | reinicia servidor apache (corta conexiones). |
+| 4 | `sudo systemctl reload apache2` | recarga configuracion servidor apache (sin perder conexion) |
+| 5 | `sudo systemctl enable apache2` | Hace que Apache se encienda automáticamente cuando arranque el ordenador. |
+| 6 | `sudo systemctl disable apache2` | Hace que Apache no se encienda automáticamente al arrancar el ordenador. |
+| 7 | `apache2ctl configtest` | Comprueba si la configuración de Apache está bien escrita y si hay errores. |
+| 8 | `apache2ctl -S` | Muestra los sitios web (virtual host cargados) que Apache tiene configurados. |
+| 9 | `apache2ctl -M` | Muestra los módulos de Apache que están activados. |
+| 10 | `a2enmod / a2dismod` | Activa o desactiva módulos de Apache. Los módulos son funciones adicionales que puede utilizar Apache. |
+| 11 | `a2ensite / a2dissite` | Activa o desactiva sitios web configurados en Apache. |
+| 12 | `a2enconf / a2disconf` | Activa o desactiva configuraciones adicionales de Apache. |
 
+pregunta: ¿Cuándo conviene usar reload en lugar de restart?
+
+Conviene usar reload cuando has cambiado la configuración de Apache y quieres que aplique los cambios sin apagar el servicio ni cortar las conexiones actuales.
