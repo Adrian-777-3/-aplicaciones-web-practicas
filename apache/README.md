@@ -20,6 +20,7 @@
 preguntas ¿Qué paquetes adicionales se han instalado como dependencias? (pista: revisa la salida de apt).
 
 ![captura 1](fotos/Captura%203.png)
+
 todas las que pongan depended son opcionales 
 
 # APARTADO 3
