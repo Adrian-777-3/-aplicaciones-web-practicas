@@ -106,10 +106,13 @@ Conviene usar reload cuando has cambiado la configuración de Apache y quieres q
 
 ![captura 1](fotos/Captura%209.png)
 
-### 
+### cambia el puerto de escucha 
 
+Cambia Listen 80 por Listen 8080 y <VirtualHost *:80> por <VirtualHost *:8080>. Después:
 
+![captura 1](fotos/Captura%2010.png)
 
+![captura 1](fotos/Captura%2011.png)
 
 
 
