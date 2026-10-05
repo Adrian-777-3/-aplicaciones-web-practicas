@@ -56,4 +56,29 @@ pregunta ¿Qué diferencia hay entre los perfiles Apache, Apache Full y Apache S
 - Apache Secure: permite solo HTTPS (443).
 - puerto 433 conexion cifrada o segura y puerto 80 sin cifrado entrar a paginas web
 
+# apartado 4
+
+sudo systemctl start apache2 | Enciende Apache y hace que empiece a funcionar.
+
+sudo systemctl stop apache2 | Apaga Apache y deja de funcionar.
+
+sudo systemctl restart apache2 | Apaga y vuelve a encender Apache. Puede cortar las conexiones que estén activas.
+
+sudo systemctl reload apache2 | Hace que Apache vuelva a leer su configuración, pero sin apagarlo ni cortar las conexiones.
+
+sudo systemctl enable apache2 | Hace que Apache se encienda automáticamente cuando arranque el ordenador.
+
+sudo systemctl disable apache2 | Hace que Apache no se encienda automáticamente al arrancar el ordenador.
+
+apache2ctl configtest | Comprueba si la configuración de Apache está bien escrita y si hay errores.
+
+apache2ctl -S | Muestra los sitios web que Apache tiene configurados.
+
+apache2ctl -M | Muestra los módulos de Apache que están activados.
+
+a2enmod / a2dismod | Activa o desactiva módulos de Apache. Los módulos son funciones adicionales que puede utilizar Apache.
+
+a2ensite / a2dissite | Activa o desactiva sitios web configurados en Apache.
+
+a2enconf / a2disconf | Activa o desactiva configuraciones adicionales de Apache.
 
