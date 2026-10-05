@@ -76,3 +76,25 @@ pregunta ¿Qué diferencia hay entre los perfiles Apache, Apache Full y Apache S
 pregunta: ¿Cuándo conviene usar reload en lugar de restart?
 
 Conviene usar reload cuando has cambiado la configuración de Apache y quieres que aplique los cambios sin apagar el servicio ni cortar las conexiones actuales.
+
+# apartado 5
+
+| Nº | Ruta | Descripción |
+|---:|---|---|
+| 1 | `/etc/apache2/apache2.conf` | Fichero de configuración principal. |
+| 2 | `/etc/apache2/ports.conf` | Puertos en los que escucha Apache. |
+| 3 | `/etc/apache2/sites-available/` | Sitios disponibles (definidos, no necesariamente activos). |
+| 4 | `/etc/apache2/sites-enabled/` | Sitios activos (enlaces simbólicos a `sites-available`). |
+| 5 | `/etc/apache2/mods-available/` y `mods-enabled/` | Módulos disponibles y activos. |
+| 6 | `/etc/apache2/conf-available/` y `conf-enabled/` | Fragmentos de configuración disponibles y activos. |
+| 7 | `/etc/apache2/envvars` | Variables de entorno (usuario y grupo de ejecución, etc.). |
+| 8 | `/var/www/html/` | Directorio raíz por defecto (`DocumentRoot`). |
+| 9 | `/var/log/apache2/access.log` | Registro de accesos. |
+| 10 | `/var/log/apache2/error.log` | Registro de errores. |
+
+### Comprobamos que los ficheros de sites-enabled son enlaces simbólicos y exploramos extructura de apache en /etc/apache2/
+
+![captura 1](fotos/Captura%207.png)
+
+
+
