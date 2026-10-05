@@ -17,7 +17,7 @@
 
 ![captura 1](fotos/Captura%204.png)
 
-preguntas ¿Qué paquetes adicionales se han instalado como dependencias? (pista: revisa la salida de apt).
+pregunta ¿Qué paquetes adicionales se han instalado como dependencias? (pista: revisa la salida de apt).
 
 ![captura 1](fotos/Captura%203.png)
 
@@ -43,4 +43,9 @@ en Apache2:
 
 ![captura 1](fotos/Captura%206.png)
 
+### comprobamos si firewall esta activado y permitimos con el segundo comando conectar apache con firewall
 
+- sudo ufw status
+- sudo ufw allow 'Apache'
+
+pregunta ¿Qué diferencia hay entre los perfiles Apache, Apache Full y Apache Secure?
