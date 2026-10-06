@@ -126,6 +126,8 @@ Comprueba que funciona en el puerto 8080
 
 ![captura 1](fotos/Captura%2014.png)
 
+### Definir el nombre del servidor
 
+![captura 1](fotos/Captura%2015.png)
 
 
