@@ -130,4 +130,10 @@ Comprueba que funciona en el puerto 8080
 
 ![captura 1](fotos/Captura%2015.png)
 
+###  Cambiar el correo del administrador por el tuyo
+
+![captura 1](fotos/Captura%2016.png)
+
+
+
 
