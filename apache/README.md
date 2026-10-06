@@ -114,7 +114,9 @@ Cambia Listen 80 por Listen 8080 y <VirtualHost *:80> por <VirtualHost *:8080>. 
 
 ![captura 1](fotos/Captura%2011.png)
 
+Comprueba que no hay errores
 
+![captura 1](fotos/Captura%2012.png)
 
 
 
