@@ -118,7 +118,13 @@ Comprueba que no hay errores
 
 ![captura 1](fotos/Captura%2012.png)
 
+Recarga Apache
 
+![captura 1](fotos/Captura%2013.png)
+
+Comprueba que funciona en el puerto 8080
+
+![captura 1](fotos/Captura%2014.png)
 
 
 
