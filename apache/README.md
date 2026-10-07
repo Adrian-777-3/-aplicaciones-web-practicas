@@ -188,6 +188,26 @@ Editar la configuración de Apache
 
 # Apartado 7 Módulos de Apache
 
+apache es un núcleo pequeño (gestiona conexiones, lee la configuración, arranca procesos) pero se le pueden añadir mas modulos con mas funciones para evitar mas consumo de recursos (centrandose en solo modulos activos)
+
+### que es un modulo y porque es importante
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
