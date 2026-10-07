@@ -114,11 +114,11 @@ Cambia Listen 80 por Listen 8080 y <VirtualHost *:80> por <VirtualHost *:8080>. 
 
 ![captura 1](fotos/Captura%2011.png)
 
-sudo apache2ctl configtest       (comprueba la sintaxis de los archivos de configuración del servidor web Apache para verificar que no contengan errores)
+- sudo apache2ctl configtest       (comprueba la sintaxis de los archivos de configuración del servidor web Apache para verificar que no contengan errores)
 
 ![captura 1](fotos/Captura%2012.png)
 
-Recarga Apache
+- sudo systemctl reload apache2 (recarga la configuración del servidor web Apache sin interrumpir las conexiones activas ni apagar el servicio.)
 
 ![captura 1](fotos/Captura%2013.png)
 
