@@ -132,6 +132,8 @@ curl -I http://localhost:8080       (sirve para verificar que tu servidor web fu
 
 ###  Cambiar el correo del administrador por el tuyo
 
+![captura 1](fotos/Captura%2017.png)
+
 ![captura 1](fotos/Captura%2016.png)
 
 
