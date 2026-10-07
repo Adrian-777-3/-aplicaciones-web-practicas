@@ -136,6 +136,16 @@ curl -I http://localhost:8080       (sirve para verificar que tu servidor web fu
 
 ![captura 1](fotos/Captura%2016.png)
 
+### Personalizar una página de error
 
+Crear la página de error
 
+![captura 1](fotos/Captura%2018.png)
 
+añadimos informacion en el archivo 
+
+![captura 1](fotos/Captura%2019.png)
+
+Editar la configuración de Apache
+
+![captura 1](fotos/Captura%2020.png)
