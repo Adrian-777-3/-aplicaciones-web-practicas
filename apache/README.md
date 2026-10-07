@@ -75,7 +75,7 @@ pregunta ¿Qué diferencia hay entre los perfiles Apache, Apache Full y Apache S
 | 11 | `a2ensite / a2dissite` | Activa o desactiva sitios web configurados en Apache. |
 | 12 | `a2enconf / a2disconf` | Activa o desactiva configuraciones adicionales de Apache. |
 
-### captura cada comando
+### captura de cada comando
 
 ![captura 1](fotos/Captura%2022.png)
 
@@ -101,8 +101,6 @@ pregunta ¿Qué diferencia hay entre los perfiles Apache, Apache Full y Apache S
 
 ![captura 1](fotos/Captura%2033.png)
 
-
-
 pregunta: ¿Cuándo conviene usar reload en lugar de restart?
 
 Conviene usar reload cuando has cambiado la configuración de Apache y quieres que aplique los cambios sin apagar el servicio ni cortar las conexiones actuales.
@@ -124,7 +122,13 @@ Conviene usar reload cuando has cambiado la configuración de Apache y quieres q
 
 ### Comprobamos que los ficheros de sites-enabled son enlaces simbólicos y exploramos extructura de apache en /etc/apache2/
 
-![captura 1](fotos/Captura%207.png)
+ls -l /etc/apache2/sites-enabled/
+
+Ahí verás los archivos con una flecha como 000-default.conf -> ../sites-available/000-default.conf, indicando que son accesos directos (enlaces simbólicos)
+
+Un elemento es un enlace simbólico si al ejecutar ls -l la línea empieza por l y muestra una flecha -> que apunta al archivo original.
+
+![captura 1](fotos/Captura%2034.png)
 
 # apartado 6
 
