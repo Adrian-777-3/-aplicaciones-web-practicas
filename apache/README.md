@@ -38,7 +38,9 @@ en Apache2:
 - Puerto 443: permite acceder a páginas web mediante HTTPS de forma cifrada.
 - Puerto 22: permite conectarse al servidor remotamente mediante SSH.
 
-### en Apache2 usaremos el comado curl -I http://localhost que Comprueba que Apache responde correctamente en el servidor local y muestra sus cabeceras HTTP
+### en apache2 Comprueba que Apache responde correctamente en el servidor local y muestra sus cabeceras HTTP
+
+- curl -I http://localhost
 
 ![captura 1](fotos/Captura%205.png)
 
