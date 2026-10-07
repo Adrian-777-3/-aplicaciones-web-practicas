@@ -122,7 +122,7 @@ Cambia Listen 80 por Listen 8080 y <VirtualHost *:80> por <VirtualHost *:8080>. 
 
 ![captura 1](fotos/Captura%2013.png)
 
-Comprueba que funciona en el puerto 8080
+curl -I http://localhost:8080       (sirve para verificar que tu servidor web funciona bien y responde peticiones por la red.)
 
 ![captura 1](fotos/Captura%2014.png)
 
