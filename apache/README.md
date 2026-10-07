@@ -46,12 +46,12 @@ en Apache2:
 
 ### comprobamos si firewall esta activado y permitimos con el segundo comando conectar apache con firewall
 
-- sudo ufw status (UFW está inactivo, por lo que actualmente no está bloqueando las conexiones de Apache.)
-- sudo ufw allow 'Apache'
+- sudo ufw status        (Muestra si el cortafuegos del sistema está activado o apagado, y qué reglas de seguridad tiene configuradas en ese momento.)
+- sudo ufw allow 'Apache'         (Añade una regla al cortafuegos para permitir el tráfico web no seguro por el puerto 80 hacia el servidor Apache)
 
 pregunta ¿Qué diferencia hay entre los perfiles Apache, Apache Full y Apache Secure?
 
-- Apache: permite HTTP (puerto 80).
+- Apache: permite solo HTTP (puerto 80).
 - Apache Full: permite HTTP (80) y HTTPS (443).
 - Apache Secure: permite solo HTTPS (443).
 - puerto 433 conexion cifrada o segura y puerto 80 sin cifrado entrar a paginas web
