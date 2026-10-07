@@ -73,6 +73,34 @@ pregunta ¿Qué diferencia hay entre los perfiles Apache, Apache Full y Apache S
 | 11 | `a2ensite / a2dissite` | Activa o desactiva sitios web configurados en Apache. |
 | 12 | `a2enconf / a2disconf` | Activa o desactiva configuraciones adicionales de Apache. |
 
+### captura cada comando
+
+![captura 1](fotos/Captura%2022.png)
+
+![captura 1](fotos/Captura%2023.png)
+
+![captura 1](fotos/Captura%2024.png)
+
+![captura 1](fotos/Captura%2025.png)
+
+![captura 1](fotos/Captura%2026.png)
+
+![captura 1](fotos/Captura%2027.png)
+
+![captura 1](fotos/Captura%2028.png)
+
+![captura 1](fotos/Captura%2029.png)
+
+![captura 1](fotos/Captura%2030.png)
+
+![captura 1](fotos/Captura%2031.png)
+
+![captura 1](fotos/Captura%2032.png)
+
+![captura 1](fotos/Captura%2033.png)
+
+
+
 pregunta: ¿Cuándo conviene usar reload en lugar de restart?
 
 Conviene usar reload cuando has cambiado la configuración de Apache y quieres que aplique los cambios sin apagar el servicio ni cortar las conexiones actuales.
@@ -149,3 +177,12 @@ añadimos informacion en el archivo
 Editar la configuración de Apache
 
 ![captura 1](fotos/Captura%2020.png)
+
+![captura 1](fotos/Captura%2021.png)
+
+# Apartado 7 Módulos de Apache
+
+
+
+
+
