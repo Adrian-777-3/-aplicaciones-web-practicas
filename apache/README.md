@@ -1,8 +1,8 @@
 # APARTADO 1
 
 ### Actualiza la lista de paquetes y el sistema:
-- sudo apt update
-- sudo apt upgrade -y
+- sudo ufw status       (ver si esta activo)
+- sudo ufw allow        (Apache'permitir a apache trafico por causa del firewall)
 ### Comprueba la versión del sistema:
 - lsb_release -a
   
@@ -114,7 +114,7 @@ Cambia Listen 80 por Listen 8080 y <VirtualHost *:80> por <VirtualHost *:8080>. 
 
 ![captura 1](fotos/Captura%2011.png)
 
-Comprueba que no hay errores
+sudo apache2ctl configtest       (comprueba la sintaxis de los archivos de configuración del servidor web Apache para verificar que no contengan errores)
 
 ![captura 1](fotos/Captura%2012.png)
 
