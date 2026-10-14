@@ -29,7 +29,7 @@
 - [🧩 Apartado 7. Módulos de Apache](#apartado-7-módulos-de-apache)
 - [🌍 Apartado 8. Virtual Hosts](#apartado-8-varios-sitios-en-un-mismo-servidor-virtual-hosts)
 - [🔐 Apartado 9. Permisos y propietarios](#apartado-9-permisos-y-propietarios)
-- [🎯 Apartado 10. Conclusiones](#apartado-10-conclusiones)
+- [🎯 Apartado 10. Conclusiones](#apartado-10-conclusion)
 
 ---
 
