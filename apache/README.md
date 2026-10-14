@@ -10,6 +10,8 @@
 
 **Módulo:** Aplicaciones Web
 
+**Fecha:** 14/10/2026
+
 🖥️ Ubuntu Server · ⚙️ Apache2 · 🔒 Seguridad
 
 ---
