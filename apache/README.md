@@ -192,13 +192,30 @@ apache es un núcleo pequeño (gestiona conexiones, lee la configuración, arran
 
 ### que es un modulo y porque es importante
 
+Un módulo de Apache es una extensión que añade una función al servidor web, como seguridad, acceso o compresión de páginas web.
+
+### comandos ver modulos
+
+apache2ctl -M
+ls /etc/apache2/mods-available/
+
+### comandos activan modulos
+
+![captura 1](fotos/Captura%2035.png)
+
+mo0dulos tipicos 
 
 
-
-
-
-
-
+| Módulo | Descripción |
+|---|---|
+| **`mod_rewrite`:** | Limpia y cambia los enlaces largos o feos por URLs más bonitas y fáciles de leer (muy útil para páginas web modernas). |
+| **`mod_headers`:** | Modifica información oculta que viaja entre tu navegador y el servidor (como las reglas de seguridad o caché). |
+| **`mod_ssl`:** | Activa el **HTTPS** (el famoso candadito verde en el navegador) para que la conexión sea segura y cifrada. |
+| **`mod_dir`:** | Busca automáticamente el archivo principal de una página (como `index.html`) cuando entras a una dirección web. |
+| **`mod_alias`:** | Crea atajos o desvíos para redirigir rutas de carpetas hacia otros sitios del disco duro. |
+| **`mod_auth_basic`:** | Pone una ventana emergente de **usuario y contraseña** para proteger una página. |
+| **`mod_status`:** | Crea una página interna para que el administrador vea en tiempo real cuántas visitas o carga tiene el servidor. |
+| **`mod_php` / PHP-FPM:** | Le enseña a Apache a entender y ejecutar páginas hechas en lenguaje **PHP** (como WordPress). |
 
 
 
