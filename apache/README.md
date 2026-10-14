@@ -1,12 +1,16 @@
 
 
+
+
 <div align="center">
 
 # 🌐 Servidor Web Apache
 
 ### Instalación, configuración y securización en Ubuntu 24.04
 
-**Ciclo Formativo de Grado Medio · Sistemas Microinformáticos y Redes**
+**Alumno:** Adrián Pérez Cereceda
+
+**Curso:** 2.º SMX — Sistemas Microinformáticos y Redes
 
 **Módulo:** Aplicaciones Web
 
