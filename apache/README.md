@@ -1,3 +1,7 @@
+
+# 🌐 Servidor Web Apache en Ubuntu 24.04
+### ⚙️ Instalación · 🔧 Configuración · 🔒 Seguridad
+---
 # APARTADO 1
 
 ### Actualiza la lista de paquetes y el sistema:
@@ -229,8 +233,72 @@ Apache fallará al intentar reiniciarse o la característica asociada dejará de
 
 # Apartado 8. Varios sitios en un mismo servidor (Virtual Hosts)
 
+crearemos dos sitios en este servidor sitio.local y sitio2.local
+
+### Crear los directorios y páginas
+
+- sudo mkdir -p /var/www/sitio1 /var/www/sitio2
+
+- echo "<h1>Bienvenido a SITIO 1</h1>" | sudo tee /var/www/sitio1/index.html
+
+- echo "<h1>Bienvenido a SITIO 2</h1>" | sudo tee /var/www/sitio2/index.html
+
+### Crear los ficheros de configuración
+sudo nano /etc/apache2/sites-available/sitio1.conf
+
+![captura 1](fotos/Captura%2036.png)
 
 
+![captura 1](fotos/Captura%2037.png)
+
+### Activar los sitios y desactivar el de por defecto
+
+- sudo a2ensite sitio1.conf sitio2.conf (este comando sirve para activar los sitios web).
+
+- sudo a2dissite 000-default.conf (este comando sirve para desactivar el sitio por defecto).
+
+- sudo apache2ctl configtest (este comando sirve para comprobar que la configuración no tiene errores).
+
+- sudo systemctl reload apache2 (este comando sirve para recargar la configuración sin cortar las conexiones).
+
+- apache2ctl -S (este comando sirve para mostrar los sitios virtuales cargados).
+
+### Resolución de nombres
+
+![captura 1](fotos/Captura%2038.png)
+
+![captura 1](fotos/Captura%2039.png)
+
+### pregunta ¿Qué diferencia hay entre virtual hosts basados en nombre y basados en IP? ¿Cuál has usado?
+
+Basados en nombre: Varios sitios web comparten la misma dirección IP y puerto, y Apache los diferencia leyendo el nombre del dominio y en IP: Cada sitio web utiliza una dirección IP distinta por lo que cada ip te lleva a una web concreta
+
+he usado la dasados en nombre no basado en ip sitio1.local y sitio2.local
+
+# Apartado 9. Permisos y propietarios
+
+Apache se ejecuta con el usuario www-data. Comprueba:
+
+- ps aux | grep apache2
+- grep -E "APACHE_RUN_(USER|GROUP)" /etc/apache2/envvars
+- ls -ld /var/www/sitio1 /var/www/sitio1/index.html
+
+Aplica una política de permisos razonable:
+
+- sudo chown -R www-data:www-data /var/www/sitio1
+- sudo find /var/www/sitio1 -type d -exec chmod 755 {} \;
+- sudo find /var/www/sitio1 -type f -exec chmod 644 {} \;
+
+![captura 1](fotos/Captura%2040.png)
+
+
+- Qué significan 755: Permisos que dan control total al propietario y lectura/ejecución al resto.
+
+- Qué significan 644: Permisos que permiten leer y escribir al propietario y solo leer al resto.
+
+- Por qué nunca se deben usar permisos 777: Porque permiten acceso total de lectura, escritura y ejecución a cualquiera, creando un riesgo crítico de seguridad.
+
+- Por qué el contenido web no debe pertenecer a root ni ser escribible por todos: Para evitar que un fallo en la web comprometa
 
 
 
