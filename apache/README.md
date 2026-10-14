@@ -217,11 +217,17 @@ mo0dulos tipicos
 | **`mod_status`:** | Crea una página interna para que el administrador vea en tiempo real cuántas visitas o carga tiene el servidor. |
 | **`mod_php` / PHP-FPM:** | Le enseña a Apache a entender y ejecutar páginas hechas en lenguaje **PHP** (como WordPress). |
 
+- sudo a2enmod nombre_del_modulo (enciende el modulo)
 
+- sudo a2dismod nombre_del_modulo (apaga el modulo)
 
+(siempre despues de un cambio hay que poner el comando  sudo systemctl restart apache2 para restablecer el servidor con los cambios)
 
+### pregunta ¿Qué ocurre si desactivas un módulo del que depende otro?
 
+Apache fallará al intentar reiniciarse o la característica asociada dejará de funcionar de inmediato, mostrando errores en las páginas o bloqueando el servicio
 
+# Apartado 8. Varios sitios en un mismo servidor (Virtual Hosts)
 
 
 
