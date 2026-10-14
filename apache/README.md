@@ -1,7 +1,36 @@
 
-# 🌐 Servidor Web Apache en Ubuntu 24.04
-### ⚙️ Instalación · 🔧 Configuración · 🔒 Seguridad
+
+<div align="center">
+
+# 🌐 Servidor Web Apache
+
+### Instalación, configuración y securización en Ubuntu 24.04
+
+**Ciclo Formativo de Grado Medio · Sistemas Microinformáticos y Redes**
+
+**Módulo:** Aplicaciones Web
+
+🖥️ Ubuntu Server · ⚙️ Apache2 · 🔒 Seguridad
+
 ---
+
+</div>
+
+## 📑 Índice
+
+- [🎯 Apartado 1. Preparación del sistema](#apartado-1)
+- [📦 Apartado 2. Instalación de Apache](#apartado-2)
+- [✅ Apartado 3. Comprobación del funcionamiento](#apartado-3)
+- [⌨️ Apartado 4. Comandos de administración](#apartado-4)
+- [📁 Apartado 5. Archivos y directorios](#apartado-5)
+- [🔧 Apartado 6. Modificaciones del servicio](#apartado-6)
+- [🧩 Apartado 7. Módulos de Apache](#apartado-7)
+- [🌍 Apartado 8. Virtual Hosts](#apartado-8)
+- [🔐 Apartado 9. Permisos y propietarios](#apartado-9)
+- [🎯 Apartado 10. Conclusiones](#apartado-10)
+
+---
+
 # APARTADO 1
 
 ### Actualiza la lista de paquetes y el sistema:
@@ -299,6 +328,12 @@ Aplica una política de permisos razonable:
 - Por qué nunca se deben usar permisos 777: Porque permiten acceso total de lectura, escritura y ejecución a cualquiera, creando un riesgo crítico de seguridad.
 
 - Por qué el contenido web no debe pertenecer a root ni ser escribible por todos: Para evitar que un fallo en la web comprometa
+
+# Apartado 10 conclusion
+
+
+
+
 
 
 
