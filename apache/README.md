@@ -270,9 +270,7 @@ crearemos dos sitios en este servidor sitio.local y sitio2.local
 
 - sudo mkdir -p /var/www/sitio1 /var/www/sitio2
 
-- (echo "<h1>Bienvenido a SITIO 1</h1>" | sudo tee /var/www/sitio1/index.html)
-
-- (echo "<h1>Bienvenido a SITIO 2</h1>" | sudo tee /var/www/sitio2/index.html)
+![captura 1](fotos/Captura%2041.png)
 
 ### Crear los ficheros de configuración
 sudo nano /etc/apache2/sites-available/sitio1.conf
