@@ -333,6 +333,14 @@ Aplica una política de permisos razonable:
 
 # Apartado 10 conclusion
 
+En esta práctica he aprendido a instalar, configurar y administrar un servidor web Apache en Ubuntu 24.04. También he aprendido a comprobar su funcionamiento mediante comandos de terminal y a revisar los puertos, los servicios y los archivos de configuración.
+
+He practicado la activación y desactivación de módulos, la modificación de la página de inicio, el cambio de puertos y la personalización de páginas de error. Además y a gestionar los permisos y propietarios de los archivos.
+
+Durante la práctica he utilizado herramientas como `systemctl`, `apache2ctl`, `curl` y `a2enmod`, que permiten administrar y comprobar el servidor.
+
+En conclusión, esta actividad me ha ayudado a comprender mejor cómo funciona un servidor web, cómo se alojan diferentes páginas y por qué es importante mantener una configuración correcta y aplicar medidas básicas de seguridad.
+
 
 
 
