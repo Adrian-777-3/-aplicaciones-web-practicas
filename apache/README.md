@@ -16,18 +16,20 @@
 
 </div>
 
+
 ## 📑 Índice
 
-- [🎯 Apartado 1. Preparación del sistema](#apartado-1)
-- [📦 Apartado 2. Instalación de Apache](#apartado-2)
-- [✅ Apartado 3. Comprobación del funcionamiento](#apartado-3)
-- [⌨️ Apartado 4. Comandos de administración](#apartado-4)
-- [📁 Apartado 5. Archivos y directorios](#apartado-5)
-- [🔧 Apartado 6. Modificaciones del servicio](#apartado-6)
-- [🧩 Apartado 7. Módulos de Apache](#apartado-7)
-- [🌍 Apartado 8. Virtual Hosts](#apartado-8)
-- [🔐 Apartado 9. Permisos y propietarios](#apartado-9)
-- [🎯 Apartado 10. Conclusiones](#apartado-10)
+- [🎯 Apartado 1. Preparación del sistema](#-apartado-1)
+- [📦 Apartado 2. Instalación de Apache](#-apartado-2)
+- [✅ Apartado 3. Comprobación del funcionamiento](#-apartado-3)
+- [⌨️ Apartado 4. Comandos principales de administración](#-apartado-4)
+- [📁 Apartado 5. Ficheros y directorios importantes](#-apartado-5)
+- [🔧 Apartado 6. Modificaciones típicas del servicio](#-apartado-6)
+- [🧩 Apartado 7. Módulos de Apache](#-apartado-7-módulos-de-apache)
+- [🌍 Apartado 8. Varios sitios en un mismo servidor (Virtual Hosts)](#-apartado-8-varios-sitios-en-un-mismo-servidor-virtual-hosts)
+- [🔐 Apartado 9. Permisos y propietarios](#-apartado-9-permisos-y-propietarios)
+- [🎯 Apartado 10. Conclusiones](#-apartado-10-conclusiones)
+
 
 ---
 
