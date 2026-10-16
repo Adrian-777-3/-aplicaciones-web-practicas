@@ -260,13 +260,13 @@ mo0dulos tipicos
 | **`mod_alias`** | `sudo a2enmod alias` | Permite crear redirecciones y asociar URL con rutas del disco. |
 | **`mod_auth_basic`** | `sudo a2enmod auth_basic` | Permite proteger páginas mediante usuario y contraseña. |
 | **`mod_status`** | `sudo a2enmod status` | Permite consultar información sobre la actividad del servidor. |
-| **`mod_php` / PHP-FPM** | Depende de la instalación | Permite a Apache procesar páginas web desarrolladas en PHP. |
-
+| **`mod_php` / PHP-FPM** | `sudo apt install php libapache2-mod-php` | Permite a Apache procesar páginas web desarrolladas en PHP. |
+```bash
 - sudo a2enmod nombre_del_modulo (enciende el modulo)
 
 - sudo a2dismod nombre_del_modulo (apaga el modulo)
-
-(siempre despues de un cambio hay que poner el comando  sudo systemctl restart apache2 para restablecer el servidor con los cambios)
+```
+(siempre despues de un cambio hay que poner el comando  `sudo systemctl restart apache2` para restablecer el servidor con los cambios)
 
 ### pregunta ¿Qué ocurre si desactivas un módulo del que depende otro?
 
@@ -277,14 +277,18 @@ Apache fallará al intentar reiniciarse o la característica asociada dejará de
 crearemos dos sitios en este servidor sitio.local y sitio2.local
 
 ### Crear los directorios y páginas
-
+```bash
 - sudo mkdir -p /var/www/sitio1 /var/www/sitio2
+- echo "<h1>Bienvenido a SITIO 1</h1>" | sudo tee /var/www/sitio1/index.html
+- echo "<h1>Bienvenido a SITIO 2</h1>" | sudo tee /var/www/sitio2/index.html
 
-![captura 1](fotos/Captura%2041.png)
+```
+
 
 ### Crear los ficheros de configuración
+```bash
 sudo nano /etc/apache2/sites-available/sitio1.conf
-
+```
 ![captura 1](fotos/Captura%2036.png)
 
 
@@ -292,6 +296,7 @@ sudo nano /etc/apache2/sites-available/sitio1.conf
 
 ### Activar los sitios y desactivar el de por defecto
 
+```bash
 - sudo a2ensite sitio1.conf sitio2.conf (este comando sirve para activar los sitios web).
 
 - sudo a2dissite 000-default.conf (este comando sirve para desactivar el sitio por defecto).
@@ -301,7 +306,7 @@ sudo nano /etc/apache2/sites-available/sitio1.conf
 - sudo systemctl reload apache2 (este comando sirve para recargar la configuración sin cortar las conexiones).
 
 - apache2ctl -S (este comando sirve para mostrar los sitios virtuales cargados).
-
+```
 ### Resolución de nombres
 
 ![captura 1](fotos/Captura%2038.png)
@@ -317,17 +322,17 @@ he usado la dasados en nombre no basado en ip sitio1.local y sitio2.local
 # Apartado 9. Permisos y propietarios
 
 Apache se ejecuta con el usuario www-data. Comprueba:
-
+```bash
 - ps aux | grep apache2
 - grep -E "APACHE_RUN_(USER|GROUP)" /etc/apache2/envvars
 - ls -ld /var/www/sitio1 /var/www/sitio1/index.html
-
+```
 Aplica una política de permisos razonable:
-
+```bash
 - sudo chown -R www-data:www-data /var/www/sitio1
 - sudo find /var/www/sitio1 -type d -exec chmod 755 {} \;
 - sudo find /var/www/sitio1 -type f -exec chmod 644 {} \;
-
+```
 ![captura 1](fotos/Captura%2040.png)
 
 
