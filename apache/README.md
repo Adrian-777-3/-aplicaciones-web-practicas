@@ -101,46 +101,21 @@ pregunta ¿Qué diferencia hay entre los perfiles Apache, Apache Full y Apache S
 
 # apartado 4
 
-| Nº | Comando | Definición |
-|---:|---|---|
-| 1 | `sudo systemctl start apache2` | Enciende Apache y hace que empiece a funcionar el servidor. |
-| 2 | `sudo systemctl stop apache2` | Apaga Apache y deja de funcionar el servidor. |
-| 3 | `sudo systemctl restart apache2` | reinicia servidor apache (corta conexiones). |
-| 4 | `sudo systemctl reload apache2` | recarga configuracion servidor apache (sin perder conexion) |
-| 5 | `sudo systemctl enable apache2` | Hace que Apache se encienda automáticamente cuando arranque el ordenador. |
-| 6 | `sudo systemctl disable apache2` | Hace que Apache no se encienda automáticamente al arrancar el ordenador. |
-| 7 | `apache2ctl configtest` | Comprueba si la configuración de Apache está bien escrita y si hay errores. |
-| 8 | `apache2ctl -S` | Muestra los sitios web (virtual host cargados) que Apache tiene configurados. |
-| 9 | `apache2ctl -M` | Muestra los módulos de Apache que están activados. |
-| 10 | `a2enmod / a2dismod` | Activa o desactiva módulos de Apache. Los módulos son funciones adicionales que puede utilizar Apache. |
-| 11 | `a2ensite / a2dissite` | Activa o desactiva sitios web configurados en Apache. |
-| 12 | `a2enconf / a2disconf` | Activa o desactiva configuraciones adicionales de Apache. |
+| Nº | Comando | Definición | Captura |
+|---:|---|---|---|
+| 1 | `sudo systemctl start apache2` | Inicia Apache y pone en funcionamiento el servidor web. | ![Captura 22](fotos/Captura%2022.png) |
+| 2 | `sudo systemctl stop apache2` | Detiene Apache y apaga el servidor web. | ![Captura 23](fotos/Captura%2023.png) |
+| 3 | `sudo systemctl restart apache2` | Reinicia Apache y puede interrumpir temporalmente las conexiones. | ![Captura 24](fotos/Captura%2024.png) |
+| 4 | `sudo systemctl reload apache2` | Recarga la configuración sin reiniciar completamente el servicio. | ![Captura 25](fotos/Captura%2025.png) |
+| 5 | `sudo systemctl enable apache2` | Configura Apache para iniciarse automáticamente al arrancar el ordenador. | ![Captura 26](fotos/Captura%2026.png) |
+| 6 | `sudo systemctl disable apache2` | Evita que Apache se inicie automáticamente al arrancar el ordenador. | ![Captura 27](fotos/Captura%2027.png) |
+| 7 | `apache2ctl configtest` | Comprueba si la configuración de Apache contiene errores de sintaxis. | ![Captura 28](fotos/Captura%2028.png) |
+| 8 | `apache2ctl -S` | Muestra los sitios virtuales (Virtual Hosts) configurados en Apache. | ![Captura 29](fotos/Captura%2029.png) |
+| 9 | `apache2ctl -M` | Muestra los módulos de Apache cargados. | ![Captura 30](fotos/Captura%2030.png) |
+| 10 | `a2enmod / a2dismod` | Activa o desactiva módulos de Apache. | ![Captura 31](fotos/Captura%2031.png) |
+| 11 | `a2ensite / a2dissite` | Activa o desactiva sitios web configurados en Apache. | ![Captura 32](fotos/Captura%2032.png) |
+| 12 | `a2enconf / a2disconf` | Activa o desactiva configuraciones adicionales de Apache. | ![Captura 33](fotos/Captura%2033.png) |
 
-### captura de cada comando
-
-![captura 1](fotos/Captura%2022.png)
-
-![captura 1](fotos/Captura%2023.png)
-
-![captura 1](fotos/Captura%2024.png)
-
-![captura 1](fotos/Captura%2025.png)
-
-![captura 1](fotos/Captura%2026.png)
-
-![captura 1](fotos/Captura%2027.png)
-
-![captura 1](fotos/Captura%2028.png)
-
-![captura 1](fotos/Captura%2029.png)
-
-![captura 1](fotos/Captura%2030.png)
-
-![captura 1](fotos/Captura%2031.png)
-
-![captura 1](fotos/Captura%2032.png)
-
-![captura 1](fotos/Captura%2033.png)
 
 pregunta: ¿Cuándo conviene usar reload en lugar de restart?
 
