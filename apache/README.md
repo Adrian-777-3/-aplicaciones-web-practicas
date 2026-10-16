@@ -236,24 +236,31 @@ Un módulo de Apache es una extensión que añade una función al servidor web, 
 ```bash
 apache2ctl -M
 ls /etc/apache2/mods-available/
-``
+```
 ### comandos activan modulos
+
+| Nº | Comando | Definición |
+|---:|---|---|
+| 1 | `sudo a2enmod rewrite` | Activa el módulo de reescritura de URL. |
+| 2 | `sudo a2enmod headers` | Activa el módulo para modificar cabeceras HTTP. |
+| 3 | `sudo systemctl restart apache2` | Reinicia Apache para aplicar los cambios. |
+| 4 | `apache2ctl -M \| grep -E "rewrite\|headers\|ssl"` | Comprueba si los módulos rewrite, headers y ssl están cargados. |
 
 ![captura 1](fotos/Captura%2035.png)
 
 mo0dulos tipicos 
 
 
-| Módulo | Descripción |
-|---|---|
-| **`mod_rewrite`:** | Limpia y cambia los enlaces largos o feos por URLs más bonitas y fáciles de leer (muy útil para páginas web modernas). |
-| **`mod_headers`:** | Modifica información oculta que viaja entre tu navegador y el servidor (como las reglas de seguridad o caché). |
-| **`mod_ssl`:** | Activa el **HTTPS** (el famoso candadito verde en el navegador) para que la conexión sea segura y cifrada. |
-| **`mod_dir`:** | Busca automáticamente el archivo principal de una página (como `index.html`) cuando entras a una dirección web. |
-| **`mod_alias`:** | Crea atajos o desvíos para redirigir rutas de carpetas hacia otros sitios del disco duro. |
-| **`mod_auth_basic`:** | Pone una ventana emergente de **usuario y contraseña** para proteger una página. |
-| **`mod_status`:** | Crea una página interna para que el administrador vea en tiempo real cuántas visitas o carga tiene el servidor. |
-| **`mod_php` / PHP-FPM:** | Le enseña a Apache a entender y ejecutar páginas hechas en lenguaje **PHP** (como WordPress). |
+| Módulo | Comandos | Descripción |
+|---|---|---|
+| **`mod_rewrite`** | `sudo a2enmod rewrite` | Permite reescribir y redirigir URL mediante reglas. |
+| **`mod_headers`** | `sudo a2enmod headers` | Modifica las cabeceras HTTP para configurar seguridad y caché. |
+| **`mod_ssl`** | `sudo a2enmod ssl` | Activa el soporte SSL/TLS para utilizar HTTPS. |
+| **`mod_dir`** | `sudo a2enmod dir` | Busca automáticamente el archivo principal de una página, como `index.html`. |
+| **`mod_alias`** | `sudo a2enmod alias` | Permite crear redirecciones y asociar URL con rutas del disco. |
+| **`mod_auth_basic`** | `sudo a2enmod auth_basic` | Permite proteger páginas mediante usuario y contraseña. |
+| **`mod_status`** | `sudo a2enmod status` | Permite consultar información sobre la actividad del servidor. |
+| **`mod_php` / PHP-FPM** | Depende de la instalación | Permite a Apache procesar páginas web desarrolladas en PHP. |
 
 - sudo a2enmod nombre_del_modulo (enciende el modulo)
 
