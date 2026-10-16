@@ -26,36 +26,42 @@
 
 ## 📑 Índice
 
-- [🎯 Apartado 1. Preparación del sistema](#apartado-1)
-- [📦 Apartado 2. Instalación de Apache](#apartado-2)
-- [✅ Apartado 3. Comprobación del funcionamiento](#apartado-3)
-- [⌨️ Apartado 4. Comandos de administración](#apartado-4)
-- [📁 Apartado 5. Ficheros y directorios importantes](#apartado-5)
-- [🔧 Apartado 6. Modificaciones del servicio](#apartado-6)
-- [🧩 Apartado 7. Módulos de Apache](#apartado-7-módulos-de-apache)
-- [🌍 Apartado 8. Virtual Hosts](#apartado-8-varios-sitios-en-un-mismo-servidor-virtual-hosts)
-- [🔐 Apartado 9. Permisos y propietarios](#apartado-9-permisos-y-propietarios)
-- [🎯 Apartado 10. Conclusiones](#apartado-10-conclusion)
+- [ Apartado 1. Preparación del sistema](#apartado-1)
+- [ Apartado 2. Instalación de Apache](#apartado-2)
+- [ Apartado 3. Comprobación del funcionamiento](#apartado-3)
+- [ Apartado 4. Comandos de administración](#apartado-4)
+- [ Apartado 5. Ficheros y directorios importantes](#apartado-5)
+- [ Apartado 6. Modificaciones del servicio](#apartado-6)
+- [ Apartado 7. Módulos de Apache](#apartado-7-módulos-de-apache)
+- [ Apartado 8. Virtual Hosts](#apartado-8-varios-sitios-en-un-mismo-servidor-virtual-hosts)
+- [ Apartado 9. Permisos y propietarios](#apartado-9-permisos-y-propietarios)
+- [ Apartado 10. Conclusiones](#apartado-10-conclusion)
 
 ---
 
 # APARTADO 1
 
 ### Actualiza la lista de paquetes y el sistema:
+```bash
 - sudo ufw status       (ver si esta activo)
 - sudo ufw allow        (Apache'permitir a apache trafico por causa del firewall)
+```
 ### Comprueba la versión del sistema:
+```bash
 - lsb_release -a
-  
+```
 ![captura 1](fotos/Captura%201.png)
 
 # APARTADO 2
 
 ### instalamos apache y comprobamos la version
+```bash
 - sudo apt install apache2 -y
+```
 ### Comprueba la versión instalada:
+```bash
 - apache2 -v
-
+```
 ![captura 1](fotos/Captura%204.png)
 
 pregunta ¿Qué paquetes adicionales se han instalado como dependencias? (pista: revisa la salida de apt).
@@ -80,9 +86,9 @@ en Apache2:
 - Puerto 22: permite conectarse al servidor remotamente mediante SSH.
 
 ### en apache2 Comprueba que Apache responde correctamente en el servidor local y muestra sus cabeceras HTTP
-
+```bash
 - curl -I http://localhost
-
+```
 ![captura 1](fotos/Captura%205.png)
 
 ![captura 1](fotos/Captura%206.png)
@@ -137,9 +143,9 @@ Conviene usar reload cuando has cambiado la configuración de Apache y quieres q
 | 10 | `/var/log/apache2/error.log` | Registro de errores. |
 
 ### Comprobamos que los ficheros de sites-enabled son enlaces simbólicos y exploramos extructura de apache en /etc/apache2/
-
+```bash
 ls -l /etc/apache2/sites-enabled/
-
+```
 Ahí verás los archivos con una flecha como 000-default.conf -> ../sites-available/000-default.conf, indicando que son accesos directos (enlaces simbólicos)
 
 Un elemento es un enlace simbólico si al ejecutar ls -l la línea empieza por l y muestra una flecha -> que apunta al archivo original.
@@ -149,45 +155,61 @@ Un elemento es un enlace simbólico si al ejecutar ls -l la línea empieza por l
 # apartado 6
 
 ### copia seguridad servidor
-
+```bash
+sudo cp /etc/apache2/apache2.conf /etc/apache2/apache2.conf.bak
+```
 ![captura 1](fotos/Captura%208.png)
 
 ### cambiaremos su pagina de inicio
-
+```bash
+echo "<h1>Servidor de Adrian</h1>" | sudo tee /var/www/html/index.html
+```
 ![captura 1](fotos/Captura%209.png)
 
 ### cambia el puerto de escucha 
-
+```bash
+sudo nano /etc/apache2/ports.conf
+```
 Cambia Listen 80 por Listen 8080 y <VirtualHost *:80> por <VirtualHost *:8080>. Después:
 
 ![captura 1](fotos/Captura%2010.png)
 
 ![captura 1](fotos/Captura%2011.png)
-
+```bash
 - sudo apache2ctl configtest       (comprueba la sintaxis de los archivos de configuración del servidor web Apache para verificar que no contengan errores)
-
+```
+```bash
 ![captura 1](fotos/Captura%2012.png)
-
+```
+```bash
 - sudo systemctl reload apache2 (recarga la configuración del servidor web Apache sin interrumpir las conexiones activas ni apagar el servicio.)
+```
 
 ![captura 1](fotos/Captura%2013.png)
-
+```bash
 curl -I http://localhost:8080       (sirve para verificar que tu servidor web funciona bien y responde peticiones por la red.)
+```
 
 ![captura 1](fotos/Captura%2014.png)
 
 ### Definir el nombre del servidor
-
+```bash
+echo "ServerName localhost" | sudo tee /etc/apache2/conf-available/servername.conf
+```
 ![captura 1](fotos/Captura%2015.png)
 
 ###  Cambiar el correo del administrador por el tuyo
-
+```bash
+sudo nano /etc/apache2/sites-available/000-default.conf
+```
 ![captura 1](fotos/Captura%2017.png)
 
 ![captura 1](fotos/Captura%2016.png)
 
 ### Personalizar una página de error
-
+```bash
+sudo nano /var/www/html/404.html
+```
 Crear la página de error
 
 ![captura 1](fotos/Captura%2018.png)
@@ -211,10 +233,10 @@ apache es un núcleo pequeño (gestiona conexiones, lee la configuración, arran
 Un módulo de Apache es una extensión que añade una función al servidor web, como seguridad, acceso o compresión de páginas web.
 
 ### comandos ver modulos
-
+```bash
 apache2ctl -M
 ls /etc/apache2/mods-available/
-
+``
 ### comandos activan modulos
 
 ![captura 1](fotos/Captura%2035.png)
