@@ -75,7 +75,7 @@ sudo mariadb
 Permite entrar en MariaDB y comprobar que acepta conexiones.
 
 ```sql
-exit;
+exit
 ```
 Sale de MariaDB y vuelve al terminal de Ubuntu.
 
@@ -87,6 +87,16 @@ Sale de MariaDB y vuelve al terminal de Ubuntu.
 
 ![Entrada en MariaDB](fotos/Captura%204.png)
 
+
+## Apartado 4. Comandos principales de MariaDB
+
+| Nº | Comando | Función del comando |
+|---|---|---|
+| 1 | `sudo systemctl start mariadb` | Inicia el servicio MariaDB. |
+| 2 | `sudo systemctl stop mariadb` | Detiene el servicio MariaDB. |
+| 3 | `sudo systemctl restart mariadb` | Reinicia el servicio MariaDB. |
+| 4 | `sudo systemctl status mariadb` | Muestra el estado del servicio MariaDB. |
+| 5 | `sudo systemctl enable mariadb` | Configura MariaDB para que se inicie automáticamente al encender el servidor. |
 
 
 
