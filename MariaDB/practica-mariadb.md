@@ -37,4 +37,4 @@ Comprueba si Apache está funcionando. Debe mostrar `active`.
 
 # Captura: Comprobación del estado de Apache
 
-![Apache funcionando]()
+![Apache funcionando](fotos/Captura%201.png)
