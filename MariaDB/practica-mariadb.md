@@ -7,6 +7,19 @@
 **Módulo:** Aplicaciones Web  
 **Fecha:** 21/10/2026
 
+
+## Índice
+
+1. [Preparación del sistema](#apartado-1-preparación-del-sistema)
+2. [Instalación de MariaDB](#apartado-2-instalación-de-mariadb)
+3. [Comprobación del funcionamiento de MariaDB](#apartado-3-comprobación-del-funcionamiento-de-mariadb)
+4. [Comandos principales de MariaDB](#apartado-4-comandos-principales-de-mariadb)
+5. [¿Qué pasa si MariaDB está parado?](#apartado-5-qué-pasa-si-mariadb-está-parado)
+6. [Instalación de PHP](#apartado-6-instalación-de-php)
+7. [Comprobación final del LAMP](#apartado-7-comprobación-final-del-lamp)
+8. [Conclusiones](#conclusiones)
+
+
 ## Apartado 1. Preparación del sistema
 
 ```bash
