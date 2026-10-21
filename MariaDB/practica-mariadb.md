@@ -200,7 +200,7 @@ Muestra los archivos que quedan en el directorio web después de eliminar `info.
 
 **¿Por qué es peligroso dejar `info.php` en un servidor real? ¿Para qué sirve el paquete `php-mysql`?**
 
-Dejar `info.php` puede revelar información técnica del servidor que podría ayudar a un atacante. El paquete `php-mysql` permite que PHP se conecte con MariaDB para consultar y guardar los datos de WordPress.
+Dejar `info.php` puede revelar información técnica del servidor que podría ayudar la gente obtenga datos sobre tu servidor. El paquete `php-mysql` permite que PHP se conecte con MariaDB para consultar y guardar los datos de WordPress.
 
 
 
