@@ -230,9 +230,7 @@ Muestra la versión de PHP instalada en el servidor.
 
 ### Conclusiones
 
-En esta práctica he instalado MariaDB y PHP en Ubuntu 24.04. He comprobado que Apache y MariaDB funcionan correctamente y que PHP puede conectarse con la base de datos. El servidor ya está preparado para instalar WordPress en la siguiente práctica.
-
-
+En esta práctica he instalado MariaDB y PHP en Ubuntu 24.04. He comprobado que Apache y MariaDB funcionan correctamente y que PHP se puede usar. El servidor ya está preparado para instalar WordPress.
 
 
 
