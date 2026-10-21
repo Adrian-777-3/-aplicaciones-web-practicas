@@ -35,6 +35,27 @@ systemctl is-active apache2
 Comprueba si Apache está funcionando. Debe mostrar `active`.
 
 
-# Captura: Comprobación del estado de Apache
+### Captura: Comprobación del estado de Apache
 
 ![Apache funcionando](fotos/Captura%201.png)
+
+
+## Apartado 2. Instalación de MariaDB
+
+```bash
+sudo apt install mariadb-server -y
+```
+Instala MariaDB, el sistema que permite gestionar las bases de datos que utilizará WordPress.
+
+```bash
+mariadb --version
+```
+Muestra la versión de MariaDB instalada en el sistema.
+
+### Captura de la versión de MariaDB
+
+![Versión de MariaDB](fotos/Captura%202.png)
+
+
+
+
