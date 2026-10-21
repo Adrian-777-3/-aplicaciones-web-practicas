@@ -57,5 +57,44 @@ Muestra la versión de MariaDB instalada en el sistema.
 ![Versión de MariaDB](fotos/Captura%202.png)
 
 
+## Apartado 3. Comprobación del funcionamiento de MariaDB
+
+```bash
+sudo systemctl status mariadb
+```
+Comprueba el estado del servicio MariaDB. `active (running)` significa que está funcionando correctamente.
+
+```bash
+systemctl is-enabled mariadb
+```
+Comprueba si MariaDB se inicia automáticamente al encender el servidor. Debe aparecer `enabled`.
+
+```bash
+sudo mariadb
+```
+Permite entrar en MariaDB y comprobar que acepta conexiones.
+
+```sql
+exit;
+```
+Sale de MariaDB y vuelve al terminal de Ubuntu.
+
+### Captura del estado del servicio MariaDB
+
+![Estado del servicio MariaDB](fotos/Captura%203.png)
+
+### Captura de la entrada en MariaDB
+
+![Entrada en MariaDB](fotos/Captura%204.png)
+
+
+
+
+
+
+
+
+
+
 
 
