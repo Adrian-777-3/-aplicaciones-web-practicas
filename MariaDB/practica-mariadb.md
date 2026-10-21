@@ -203,6 +203,35 @@ Muestra los archivos que quedan en el directorio web después de eliminar `info.
 Dejar `info.php` puede revelar información técnica del servidor que podría ayudar la gente obtenga datos sobre tu servidor. El paquete `php-mysql` permite que PHP se conecte con MariaDB para consultar y guardar los datos de WordPress.
 
 
+## Apartado 7. Comprobación final del LAMP
+
+```bash id="qjs8z2"
+systemctl is-active apache2 mariadb
+```
+Comprueba que los servicios Apache y MariaDB están funcionando. Ambos deben mostrar `active`.
+
+```bash id="85dhjk"
+php -v
+```
+Muestra la versión de PHP instalada en el servidor.
+
+### Captura de la comprobación final
+
+![Comprobación final del servidor LAMP](fotos/Captura%2010.png)
+
+### Estado final de los componentes LAMP
+
+| Componente | Programa | Estado |
+|---|---|---|
+| Linux | Ubuntu 24.04 | Instalado |
+| Servidor web | Apache2 | Funcionando |
+| Base de datos | MariaDB 10.11 | Funcionando |
+| Lenguaje de programación | PHP 8.3.6 | Instalado y preparado para MariaDB |
+
+### Conclusiones
+
+En esta práctica he instalado MariaDB y PHP en Ubuntu 24.04. He comprobado que Apache y MariaDB funcionan correctamente y que PHP puede conectarse con la base de datos. El servidor ya está preparado para instalar WordPress en la siguiente práctica.
+
 
 
 
