@@ -100,6 +100,107 @@ Sale de MariaDB y vuelve al terminal de Ubuntu.
 
 
 
+## Apartado 5. ¿Qué pasa si MariaDB está parado?
+
+```bash
+sudo systemctl stop mariadb
+```
+Detiene temporalmente el servicio MariaDB para comprobar qué ocurre cuando está apagado.
+
+```bash
+systemctl is-active mariadb
+```
+Comprueba si MariaDB está funcionando. Debe aparecer `inactive` cuando el servicio está detenido.
+
+```bash
+sudo mariadb
+```
+Intenta entrar en MariaDB. Como el servicio está parado, aparecerá un error de conexión.
+
+### Captura del error al intentar entrar en MariaDB
+
+![Error de conexión con MariaDB](fotos/Captura%205.png)
+
+```bash
+sudo systemctl start mariadb
+```
+Vuelve a iniciar el servicio MariaDB para recuperar su funcionamiento.
+
+```bash
+systemctl is-active mariadb
+```
+Comprueba que MariaDB vuelve a funcionar. Debe aparecer `active`.
+
+### Captura de la recuperación de MariaDB
+
+![Recuperación de MariaDB](fotos/Captura%206.png)
+
+### Pregunta de reflexión
+
+**Si WordPress no pudiera conectar con la base de datos, ¿qué dos comandos usarías para saber si MariaDB está parado?**
+
+Utilizaría `systemctl is-active mariadb` para comprobar si el servicio está activo y `sudo systemctl status mariadb` para consultar su estado detallado.
+
+
+## Apartado 6. Instalación de PHP
+
+```bash
+sudo apt install php libapache2-mod-php php-mysql php-curl php-gd php-mbstring php-xml php-zip php-intl -y
+```
+Instala PHP y los módulos necesarios para que WordPress funcione con Apache y MariaDB.
+
+```bash
+php -v
+```
+Muestra la versión de PHP instalada. En este caso, se ha instalado PHP 8.3.6.
+
+### Captura de la versión de PHP
+
+![Versión de PHP](fotos/Captura%207.png)
+
+```bash
+sudo systemctl restart apache2
+```
+Reinicia Apache para que cargue correctamente la configuración de PHP.
+
+```bash
+sudo apache2ctl -M | grep -E "mpm|php"
+```
+Comprueba que Apache tiene cargados los módulos necesarios para ejecutar PHP. Deben aparecer `mpm_prefork_module` y `php_module`.
+
+```bash
+php -m | grep -i mysql
+```
+Comprueba que están instalados los módulos que permiten a PHP conectarse con MariaDB: `mysqli`, `mysqlnd` y `pdo_mysql`.
+
+### Captura de los módulos de Apache y PHP
+
+![Módulos de Apache y PHP](fotos/Captura%208.png)
+
+```bash
+echo '<?php phpinfo();' | sudo tee /var/www/html/info.php
+```
+Crea un archivo de prueba que muestra información sobre PHP al abrirlo desde el navegador.
+
+### Captura de la página de información de PHP
+
+![Página de información de PHP](fotos/Captura%209.png)
+
+```bash
+sudo rm /var/www/html/info.php
+```
+Elimina el archivo de prueba para evitar exponer información técnica del servidor.
+
+```bash
+ls /var/www/html
+```
+Muestra los archivos que quedan en el directorio web después de eliminar `info.php`.
+
+### Pregunta:
+
+**¿Por qué es peligroso dejar `info.php` en un servidor real? ¿Para qué sirve el paquete `php-mysql`?**
+
+Dejar `info.php` puede revelar información técnica del servidor que podría ayudar a un atacante. El paquete `php-mysql` permite que PHP se conecte con MariaDB para consultar y guardar los datos de WordPress.
 
 
 
