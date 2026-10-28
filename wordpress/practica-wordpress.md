@@ -278,18 +278,270 @@ WordPress sirve para crear y administrar páginas web y blogs sin tener que prog
 
 La terminal se ha utilizado para configurar el servidor y preparar WordPress. En el navegador hemos terminado la instalación e iniciado sesión. El servidor no necesita interfaz gráfica porque podemos administrarlo desde el navegador de otro equipo.
 
+## Apartado 6. Comprobamos que WordPress funciona
+
+### 6.1. Comprobar la web pública
+
+Abro `http://192.168.56.24` en el navegador y compruebo que aparece mi página de WordPress.
+
+### Captura 9. Web pública de WordPress
+
+![Web pública de WordPress](fotos/Captura%209.png)
+
+### 6.2. Acceder al panel de administración
+
+Entro en `http://192.168.56.24/wp-admin` e inicio sesión con mi usuario y contraseña de WordPress.
+
+### 6.3. Publicar una entrada de prueba
+
+Desde el panel de administración, entro en **Entradas → Añadir nueva**, escribo un título y un texto breve y pulso **Publicar**. Después, compruebo que la entrada aparece en la web pública.
+
+### Captura 10. Entrada publicada
+
+![Entrada publicada en WordPress](fotos/Captura%2010.png)
+
+### 6.4. Comprobar las tablas de WordPress
+
+Ejecuto este comando en la terminal para mostrar las tablas de la base de datos:
+
+```bash
+sudo mariadb wordpress -e "SHOW TABLES;"
+```
+
+El comando muestra las tablas creadas por WordPress. Entre ellas está `wp_posts`, donde se guardan las entradas y páginas.
+
+### Captura 11. Tablas de WordPress
+
+![Tablas de WordPress en MariaDB](fotos/Captura%2011.png)
+
+### Pregunta:
+
+¿Dónde guarda WordPress las entradas que escribes: en ficheros del servidor o en la base de datos? ¿Cómo lo has comprobado?
+
+WordPress guarda las entradas en la base de datos. Lo he comprobado ejecutando el comando `SHOW TABLES` y viendo la tabla `wp_posts`.
+
+## Apartado 7. Configuración de la URL de WordPress
+
+### 7.1. Modificar el archivo de configuración
+
+Abro el archivo de configuración de WordPress:
+
+```bash
+sudo nano /var/www/html/wp-config.php
+```
+
+Añado estas dos líneas justo antes del comentario `That's all, stop editing!`:
+
+```php
+define( 'WP_HOME', 'http://' . $_SERVER['HTTP_HOST'] );
+define( 'WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST'] );
+```
+
+Estas líneas hacen que WordPress utilice el nombre de host o la IP con la que se accede a la web.
+
+### 7.2. Comprobar la sintaxis
+
+Ejecuto el siguiente comando para comprobar que el archivo no contiene errores de sintaxis:
+
+```bash
+php -l /var/www/html/wp-config.php
+```
+
+El resultado indica que no hay errores de sintaxis.
+
+### Captura 12. Comprobación del archivo de configuración
+
+![Comprobación de wp-config.php](fotos/Captura%2012.png)
+
+### Pregunta:
+
+¿Por qué ayuda esta configuración si cambia la IP del servidor?
+
+WordPress utiliza el host con el que se accede a la web, en lugar de tener una IP fija escrita en esas dos líneas. Así, en esta práctica, puede adaptarse a una IP diferente al acceder desde el navegador.
+
+## Apartado 8. Dos ajustes para trabajar cómodamente
+
+### 8.1. Direcciones bonitas (enlaces permanentes)
+
+Creo el archivo de configuración de Apache:
+
+```bash
+sudo nano /etc/apache2/conf-available/wordpress.conf
+```
+
+Añado esta configuración para permitir que Apache lea el archivo `.htaccess`:
+
+```apache
+<Directory /var/www/html>
+    AllowOverride All
+</Directory>
+```
+
+Activo el módulo `rewrite`:
+
+```bash
+sudo a2enmod rewrite
+```
+
+Activo la configuración de WordPress en Apache:
+
+```bash
+sudo a2enconf wordpress
+```
+
+Compruebo que la configuración no tiene errores:
+
+```bash
+sudo apache2ctl configtest
+```
+
+Reinicio Apache para aplicar los cambios:
+
+```bash
+sudo systemctl restart apache2
+```
+
+Después, entro en **Ajustes → Enlaces permanentes**, selecciono **Nombre de la entrada** y guardo los cambios. Compruebo que una entrada se abre correctamente con su nueva dirección.
+
+Verifico que existe el archivo `.htaccess`:
+
+```bash
+ls -la /var/www/html/.htaccess
+```
+
+### Captura 14. Configuración de Apache
+
+![Configuración de Apache](fotos/Captura%2014.png)
+
+### Captura 15. Enlaces permanentes de WordPress
+
+![Enlaces permanentes de WordPress](fotos/Captura%2015.png)
+
+### 8.2. Aumentar el tamaño máximo de subida
+
+Configuro PHP para permitir subir archivos de hasta 64 MB:
+
+```bash
+printf 'upload_max_filesize = 64M\npost_max_size = 64M\n' | sudo tee /etc/php/8.3/apache2/conf.d/99-wordpress.ini
+```
+
+Reinicio Apache para aplicar los cambios:
+
+```bash
+sudo systemctl restart apache2
+```
+
+Entro en **Medios → Añadir nuevo** y compruebo que el tamaño máximo de subida es de 64 MB.
+
+### Captura 16. Tamaño máximo de subida
+
+![Tamaño máximo de subida de WordPress](fotos/Captura%2016.png)
+
+### Pregunta:
+
+¿Por qué las direcciones "bonitas" dan error 404 si Apache no tiene permitido leer el fichero `.htaccess`?
+
+Porque Apache no puede leer las reglas de reescritura del archivo `.htaccess`. Por eso, no interpreta correctamente la dirección de la entrada y puede mostrar un error 404.
+
+## Apartado 9. ¿Qué pasa si MariaDB se para?
+
+WordPress necesita MariaDB para acceder a la base de datos donde guarda las entradas, páginas y ajustes. Para comprobarlo, detengo el servicio temporalmente.
+
+### 9.1. Detener MariaDB
+
+Ejecuto el siguiente comando para detener el servicio:
+
+```bash
+sudo systemctl stop mariadb
+```
+
+Después, abro `http://192.168.56.24` en el navegador. WordPress muestra un error de conexión con la base de datos porque MariaDB está detenido.
+
+### Captura 17. Error de conexión con la base de datos
+
+![Error de conexión con MariaDB](fotos/Captura%2017.png)
+
+### 9.2. Volver a iniciar MariaDB
+
+Arranco de nuevo el servicio:
+
+```bash
+sudo systemctl start mariadb
+```
+
+Compruebo que está funcionando:
+
+```bash
+systemctl is-active mariadb
+```
+
+El resultado es `active`, por lo que MariaDB está activo. Finalmente, recargo la web y compruebo que WordPress vuelve a funcionar.
+
+### Captura 18. WordPress recuperado
+
+![WordPress funcionando después de iniciar MariaDB](fotos/Captura%2018.png)
+
+### Pregunta:
+
+Cuando WordPress muestra "Error al establecer una conexión con la base de datos", ¿qué dos cosas comprobarías y en qué orden?
+
+1. Comprobaría si MariaDB está funcionando con `systemctl is-active mariadb`. Si está detenido, lo iniciaría con `sudo systemctl start mariadb`.
+2. Si MariaDB está activo y el error continúa, comprobaría que el usuario, la contraseña y el nombre de la base de datos configurados en WordPress son correctos.
 
 
+## Apartado 10. Comprobación final
 
+### 10.1. Comprobar el estado de los servicios
 
+Ejecuto el siguiente comando para comprobar que Apache y MariaDB están funcionando:
 
+```bash
+systemctl is-active apache2 mariadb
+```
 
+Los dos servicios muestran el estado `active`.
 
+### 10.2. Comprobar la versión de PHP
 
+Ejecuto el siguiente comando:
 
+```bash
+php -v
+```
 
+El resultado muestra que tengo instalada la versión PHP 8.3.6.
 
+### 10.3. Comprobar el sitio habilitado de Apache
 
+Ejecuto este comando:
+
+```bash
+ls /etc/apache2/sites-enabled/
+```
+
+El resultado muestra que el único sitio habilitado es `000-default.conf`.
+
+### 10.4. Comprobar las tablas de WordPress
+
+Ejecuto el siguiente comando para mostrar las tablas de la base de datos `wordpress`:
+
+```bash
+sudo mariadb wordpress -e "SHOW TABLES;"
+```
+
+El resultado muestra las tablas creadas por WordPress, entre ellas `wp_posts`, `wp_users` y `wp_options`.
+
+### 10.5. Resumen final de la instalación
+
+- **Linux:** Ubuntu 24.04, instalado.
+- **Apache:** Apache2, con un único sitio habilitado (`000-default.conf`), funcionando.
+- **MariaDB:** versión 10.11, funcionando y con la base de datos `wordpress`.
+- **PHP:** versión 8.3.6, instalada.
+- **WordPress:** instalado en `/var/www/html` y accesible desde el navegador.
+
+### Captura 19. Comprobación final de WordPress
+
+![Comprobación final de Apache, MariaDB, PHP y las tablas de WordPress](fotos/Captura%2019.png)
 
 
 
