@@ -7,6 +7,20 @@
 
 ---
 
+## Índice
+
+1. [Instalación de WordPress](#apartado-1-instalación-de-wordpress)
+2. [Configuración inicial de WordPress](#apartado-2-configuración-inicial-de-wordpress)
+3. [Configuración de la base de datos](#apartado-3-configuración-de-la-base-de-datos)
+4. [Instalación y configuración de PHP](#apartado-4-instalación-y-configuración-de-php)
+5. [Acceso al panel de administración](#apartado-5-acceso-al-panel-de-administración)
+6. [Comprobación de WordPress](#apartado-6-comprobación-de-wordpress)
+7. [Configuración de la URL de WordPress](#apartado-7-configuración-de-la-url-de-wordpress)
+8. [Dos ajustes para trabajar cómodamente](#apartado-8-dos-ajustes-para-trabajar-cómodamente)
+9. [¿Qué pasa si MariaDB se para?](#apartado-9-qué-pasa-si-mariadb-se-para)
+10. [Comprobación final](#apartado-10-comprobación-final)
+
+
 ## Apartado 1. Conexión por SSH y comprobación del servidor
 
 ### 1.1. Averiguar la IP del servidor
