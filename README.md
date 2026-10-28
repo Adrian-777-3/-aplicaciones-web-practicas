@@ -8,5 +8,6 @@ Repositorio con las memorias de las prácticas del módulo de Aplicaciones Web.
 |----|----------------------------|------------------------------------------------------|
 | 1 | Introducción a HTML básico | [Vermemoria](https://github.com/Adrian-777-3/-aplicaciones-web-practicas/blob/main/practica-01-html-%20basic/memoria.md) |
 | 2 | PRACTICA apache | [Vermemoria](https://github.com/Adrian-777-3/-aplicaciones-web-practicas/tree/main/apache) |
-| 2 | PRACTICA MariaDB | [Vermemoria](https://github.com/Adrian-777-3/-aplicaciones-web-practicas/blob/main/MariaDB/practica-mariadb.md) |
+| 3 | PRACTICA MariaDB | [Vermemoria](https://github.com/Adrian-777-3/-aplicaciones-web-practicas/blob/main/MariaDB/practica-mariadb.md) |
+| 4 | PRACTICA wordpress | [Vermemoria](https://github.com/Adrian-777-3/-aplicaciones-web-practicas/blob/main/wordpress/practica-wordpress.md#apartado-3-crear-la-base-de-datos-de-wordpress) |
 
