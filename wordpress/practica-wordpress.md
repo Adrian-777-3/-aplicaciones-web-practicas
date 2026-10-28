@@ -573,3 +573,4 @@ El resultado muestra las tablas creadas por WordPress, entre ellas `wp_posts`, `
 
 
 
+
